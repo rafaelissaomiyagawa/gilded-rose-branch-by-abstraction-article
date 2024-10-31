@@ -2,11 +2,11 @@ import globals from "globals";
 import pluginJs from "@eslint/js";
 
 export default [
-  {
-    languageOptions: { globals: globals.browser },
-    rules: {
-      eqeqeq: ["error", "smart"],
+    {
+        languageOptions: {globals: globals.browser},
+        rules: {
+            eqeqeq: ["error", "smart"],
+        },
     },
-  },
-  pluginJs.configs.recommended,
+    pluginJs.configs.recommended,
 ];
