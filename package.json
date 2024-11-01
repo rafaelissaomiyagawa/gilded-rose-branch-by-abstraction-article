@@ -11,6 +11,6 @@
     "prettier-eslint": "^16.3.0"
   },
   "scripts": {
-    "continuous:testing": "NODE_ENV=continuous-testing node --experimental-vm-modules ./node_modules/.bin/jest --watch"
+    "continuous:testing": "NODE_ENV=continuous-testing node --experimental-vm-modules ./node_modules/.bin/jest --config ./jest-config/jest.config.js --watch"
   }
 }

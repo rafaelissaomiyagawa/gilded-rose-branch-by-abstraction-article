@@ -7,7 +7,7 @@ export default class NotifierReporter {
         if (!isLocal) {
             return;
         }
-
+        
         if (results.numFailedTests > 0) {
             Notifier.notify({
                 title: '❌ Tests Failed',

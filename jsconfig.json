@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "checkJs": true,
+    "typeRoots": ["./node_modules/@types",
+      "./jest-config/types"
+    ]
+  },
+  "include": [
+    "./**/*.d.ts",
+    "./**/*.js"
+  ]
+}
