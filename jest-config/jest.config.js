@@ -1,9 +1,7 @@
 export default {
     rootDir: '../',
     transform: {},
-    "reporters": [
-        "default",
-        "./jest-config/jest-notifier-reporter.js"
-    ],
+    notify: true,
+    notifyMode: "failure-change",
     setupFilesAfterEnv: ["./jest-config/jest.setup.js"],
 }

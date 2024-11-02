@@ -1,0 +1,19 @@
+@startuml
+'https://plantuml.com/component-diagram
+top to bottom direction
+
+interface "Aged Brie" as AgedBrie #yellow
+interface Backstage #yellow
+interface Sulfuras #yellow
+interface Common #yellow
+component [legacyCode] #yellow
+
+AgedBrie --> [updateQuality]
+Backstage --> [updateQuality]
+Sulfuras --> [updateQuality]
+Common --> [updateQuality]
+
+[updateQuality] <-- [legacyCode]
+[updateQuality] <-- [newCode]
+
+@enduml
