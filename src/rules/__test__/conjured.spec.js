@@ -1,5 +1,5 @@
 import {expect, it} from '@jest/globals';
-import Conjured from "../rules/conjured.js";
+import Conjured from "../conjured.js";
 
 it.each`
     sellIn | expectedSellIn | quality | expectedQuality
