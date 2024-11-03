@@ -1,5 +1,6 @@
 import {expect, it} from '@jest/globals';
 import Conjured from "../conjured.js";
+import {Shop} from "../../gilded_rose.js";
 
 it.each`
     sellIn | expectedSellIn | quality | expectedQuality
@@ -11,7 +12,7 @@ it.each`
     ({sellIn, expectedSellIn, quality, expectedQuality}) => {
         const conjured = Conjured.create(sellIn, quality);
 
-        Conjured.applyRule(conjured);
+        new Shop([conjured]).updateQuality()
 
         expect(conjured.sellIn).toEqualWithMessage(expectedSellIn, "SellIn");
         expect(conjured.quality).toEqualWithMessage(expectedQuality, "Quality");
@@ -27,7 +28,7 @@ it.each`
     ({sellIn, expectedSellIn, quality, expectedQuality}) => {
         const conjured = Conjured.create(sellIn, quality);
 
-        Conjured.applyRule(conjured);
+        new Shop([conjured]).updateQuality()
 
         expect(conjured.sellIn).toEqualWithMessage(expectedSellIn, "SellIn");
         expect(conjured.quality).toEqualWithMessage(expectedQuality, "Quality");
@@ -38,14 +39,14 @@ it.each`
     ${1}   | ${0}           | ${1}   | ${0}
     ${-1}  | ${-2}          | ${3}   | ${0}
     ${1}   | ${0}           | ${0}   | ${0}
-    ${-1}  | ${-2}          | ${0}   | ${0} 
+    ${-1}  | ${-2}          | ${0}   | ${0}
     `('Item Conjurado não pode ter qualidade negativa' +
     '\n\tsellIn: $sellIn -> $expectedSellIn ' +
     '\n\tquality: $quality -> $expectedQuality',
     ({sellIn, expectedSellIn, quality, expectedQuality}) => {
         const conjured = Conjured.create(sellIn, quality);
 
-        Conjured.applyRule(conjured);
+        new Shop([conjured]).updateQuality()
 
         expect(conjured.sellIn).toEqualWithMessage(expectedSellIn, "SellIn");
         expect(conjured.quality).toEqualWithMessage(expectedQuality, "Quality");
