@@ -1,6 +1,6 @@
-import Sulfuras from "../sulfuras.js";
 import {Shop} from "../../gilded_rose.js";
 import {expect, it} from "@jest/globals";
+import Sulfuras from "../sulfuras.js";
 
 it.each`
     sellIn | expectedSellIn | quality | expectedQuality

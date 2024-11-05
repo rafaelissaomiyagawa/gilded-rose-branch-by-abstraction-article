@@ -1,11 +1,11 @@
 import {expect, it} from '@jest/globals';
-import Conjured from "../conjured.js";
 import {Shop} from "../../gilded_rose.js";
+import Conjured from "../conjured.js";
 
 it.each`
     sellIn | expectedSellIn | quality | expectedQuality
     ${10}  | ${9}           | ${10}   | ${8}
-    ${1}   | ${0}           | ${8}    | ${6}
+    ${1}   | ${0}           | ${8}    | ${6} 
     `('Item Conjurado diminui a qualidade duas vezes mais rápido: ' +
     '\n\tsellIn: $sellIn -> $expectedSellIn ' +
     '\n\tquality: $quality -> $expectedQuality',
@@ -17,6 +17,7 @@ it.each`
         expect(conjured.sellIn).toEqualWithMessage(expectedSellIn, "SellIn");
         expect(conjured.quality).toEqualWithMessage(expectedQuality, "Quality");
     });
+
 
 it.each`
     sellIn | expectedSellIn | quality | expectedQuality

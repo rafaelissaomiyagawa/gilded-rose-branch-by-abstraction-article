@@ -1,16 +1,18 @@
-import ruleFunctionByItem from "./rules/ruleFunctionByItem.js";
+import rulesByItemName from "./rules/rulesByItemName.js";
+
 
 export class Shop {
     constructor(items = []) {
         this.items = items;
     }
-
+    
     updateQuality() {
         for (const item of this.items) {
-            if (ruleFunctionByItem.has(item.name)) {
-                const ruleFunction = ruleFunctionByItem.get(item.name);
-                ruleFunction(item);
+            if (rulesByItemName.has(item.name)) {
+                const rule = rulesByItemName.get(item.name);
+                rule(item);
             } else {
+                // Itens antigos
                 this.legacyCode(item);
             }
         }
@@ -19,8 +21,7 @@ export class Shop {
     }
 
     legacyCode(item) {
-        if (item.name !== 'Aged Brie' &&
-            item.name !== 'Backstage passes to a TAFKAL80ETC concert') {
+        if (item.name !== 'Aged Brie' && item.name !== 'Backstage passes to a TAFKAL80ETC concert') {
             if (item.quality > 0) {
                 if (item.name !== 'Sulfuras, Hand of Ragnaros') {
                     item.quality = item.quality - 1;
